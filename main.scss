@@ -1,0 +1,24 @@
+@import './scss/settings/normalize';
+@import './scss/settings/fonts';
+@import './scss/settings/mixins';
+@import './scss/settings/vars';
+
+@import './layout.scss';
+
+@import './scss/blocks/header';
+@import './scss/blocks/nav';
+@import './scss/blocks/main-page';
+@import './scss/blocks/buttons';
+@import './scss/blocks/features';
+@import './scss/blocks/feature';
+@import './scss/blocks/icons';
+@import './scss/blocks/phone';
+@import './scss/blocks/why';
+@import './scss/blocks/benefits';
+@import './scss/blocks/reviews';
+@import './scss/blocks/review';
+@import './scss/blocks/interactive-avatar';
+@import './scss/blocks/order';
+@import './scss/blocks/form';
+@import './scss/blocks/radio';
+@import './scss/blocks/fixed-menu';

@@ -1,0 +1,73 @@
+.benefits {
+  @include flex-between;
+
+  &__item {
+    flex: 1;
+    padding: 0 3%; // По правилам это должен быть марджин. Но нам надо позиционировать пузырьки между иконками. 
+    // Т.к. марджин в %, мы не можем абсолютом правильно выставить пузырьки на середину.
+    // Поэтому мы заменили марджин на паддинг, теперь, right: 0 ставит прямо на границу (середину). 
+    position: relative;
+
+    &:before {
+      content: url('../../img/icons/bubbles.png');
+      position: absolute;
+      top: 52px;
+      right: 0;
+      transform: translateX(50%);
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &:before {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.benefit {
+  @include flex-between;
+  flex-direction: column;
+
+  &__image {
+    margin-bottom: 35px;
+  }
+
+  &__wrapper {
+    width: 126px;
+    height: 126px;
+    border-radius: 50%;
+    background-color: $light-grey;
+    @include flex-center;  // Сабанцев сделал абсолютом! (почему?)
+    overflow: hidden;
+  }
+
+  &__icon {
+    width: 75px;
+    height: 69px;
+  }
+
+  &__title {
+    color: $black;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }  
+
+  &__text {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &__desc p {
+    text-align: center;
+  }
+
+}
+
+

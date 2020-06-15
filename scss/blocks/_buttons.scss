@@ -1,0 +1,36 @@
+.button {
+  @include button;
+  
+  &--white {
+    background-color: $white;
+    color: $pine;
+
+    &:hover {
+      background-color: $pine;
+      color: $white;
+    }
+  }
+  
+  &--pine {
+    background-color: $pine;
+    color: $white;
+    
+    &:hover {
+      background-color: $white;
+      color: $pine;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $pine;
+    font-size: 18px;
+    text-transform: none;
+    font-weight: normal;
+    box-shadow: none;
+  
+    &:hover {
+      color: $black;
+    }
+  }
+}

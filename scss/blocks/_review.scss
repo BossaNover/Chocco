@@ -1,0 +1,64 @@
+.review {
+  
+  &__display {
+    background: url('../../img/review_layer2.png') right top no-repeat;
+    background-color: $light-grey2;
+    padding: 50px 45px 20px;
+
+    position: relative;
+    overflow: hidden; // спец.для того, чтобы скрыть часть элемента - белого круга, вверху. 
+
+    &:before {
+      content: "";
+      display: block; // почему?
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -65px;
+      width: 90px;
+      height: 90px;
+      background-color: $white;
+      border-radius: 50%;
+    }
+
+    &-inner {
+      display: flex;
+    }
+  }
+
+  &__avatar {
+    width: 254px;
+    height: 260px;
+
+    &-img {
+      object-fit: cover;  // чтобы картинка заполняла всю ширину и высоту!
+      width: 100%;  // чтобы картинка заполняла всю ширину и высоту!
+      height: 100%;    // но текст прижимает картинку!
+    }
+  }
+  &__content {
+    flex: 1;  // - чтобы текст не прижимал картинку!
+    padding: 16px 120px 16px 16px;
+  }
+  
+  &__title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: $black;
+  }
+
+  &__text {
+    margin-bottom: 33px;
+  }
+
+  &__author {
+    color: $black;
+    font-weight: bold;
+  }
+
+  &__switcher {
+    @include flex-center;
+    padding: 20px;
+  }
+}

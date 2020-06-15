@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__wrapper {
+  padding: 0 43px;  /* почему-то если задаю паддинги, происходит перенос слов на новую строку, как будто не хватает ширины */
+}

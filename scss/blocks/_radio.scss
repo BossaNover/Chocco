@@ -1,0 +1,54 @@
+.radio {
+  display: flex;
+  cursor: pointer; // чтобы появился указательный палец при наведении курсора
+  user-select: none; // чтобы отключить выделение наименования поля при клике по нему
+  margin-right: 23px;
+
+  &--checkbox {
+    .radio__visible {
+      border-radius: 0;
+
+      &::before {
+        background: url('../../img/icons/tick.png') center center no-repeat;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+    &__elem {
+      display: none;
+      &:checked ~ .radio__visible {
+        &::before {
+          display: block;
+        }
+      }
+    }
+
+    &__visible {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      position: relative;
+      margin-right: 10px;
+      background-color: $white;
+
+
+      &:before {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $pine;
+        
+      }
+    }
+    
+  }

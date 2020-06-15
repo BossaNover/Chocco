@@ -1,0 +1,31 @@
+.reviews {
+  color: $brownish-grey;
+  position: relative;
+
+  &__container {
+    height: 100%;
+    padding: 60px 0 66px;
+  }
+
+  &__title {
+    text-align: center;
+    color: $black;
+    margin-bottom: 30px;
+  }
+
+   
+  &:before {
+    content: url('../../img/review_layers.png'); 
+    left: 0;
+    bottom: -160px;
+    position: absolute;
+  }
+
+  &:after {
+    content: url('../../img/berries5.png'); 
+    right: 15px;
+    top: 35px;
+    position: absolute;
+  }
+
+}

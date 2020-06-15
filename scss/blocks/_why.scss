@@ -1,0 +1,46 @@
+.why {
+  position: relative;
+  background-color: $white;
+  
+  background: url('../../img/big-leaf2.png') left top 57% no-repeat;
+
+  
+  color: $brownish-grey;
+  
+  &__container {
+    @include flex-between;
+    flex-direction: column;
+    height: 100%;
+    padding: 113px 0 118px;
+  }
+
+   &:before {
+    content: url('../../img/raspberry.png');
+    position: absolute;
+    left: 0;
+    bottom: -80px;
+  }  
+
+  &__title-section {
+    @include flex-center;
+    flex-direction: column;
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    color: $black;
+    text-align: center;
+    padding-bottom: 10px;
+
+    &-description {
+      padding: 0 24%;
+      & p {
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+}

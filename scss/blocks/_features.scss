@@ -1,0 +1,13 @@
+.features {
+  @include flex-between;
+  align-items: flex-start;
+ 
+  &__item {
+    @include flex-start;
+    margin-right: 46px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

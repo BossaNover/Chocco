@@ -1,0 +1,74 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal; 
+  box-sizing: border-box;
+  font-family: 'Alegreya Sans', serif;
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: $f-size_base;
+  font-style: normal;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialised; 
+  -moz-osx-font-smoothing: grayscale; 
+  position: relative; // а зачем?
+}
+
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%; //почему?/
+  min-width: $container-width + 20px; // зачем на такая ширина на враппере?
+  min-height: 100%; //почему?/
+  overflow: hidden;
+}
+
+.section {
+  min-height: 650px; // почему именно MIN-height?
+  height: 100vh; //  для отображения секции в высоту окна
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+  position: relative;  // спец.прием, который помогает задать бОльший приоритет содержимому контейнера, 
+  // чтобы картинки случайно не на ползли на текст!
+}
+
+.title {
+  font-size: $f-size_title;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.description p {
+  font-size: 21px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

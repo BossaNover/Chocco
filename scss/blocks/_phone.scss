@@ -1,0 +1,19 @@
+
+.phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__picture {
+    margin-right: 6px;
+  }
+
+  &__number {
+    font-size: 24px;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+  }
+}

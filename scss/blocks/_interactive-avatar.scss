@@ -1,0 +1,29 @@
+.interactive-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  overflow: hidden; // ПОЧЕмУ?
+  position: relative;
+
+  &--active {
+    border-color: $pine;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block; //почему ?  видео №7 07:42  "т.к. мы изменяли размеры ссылки"
+  }
+
+  &__img {
+    display: block; //почему ?
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+}

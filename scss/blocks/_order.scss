@@ -1,5 +1,5 @@
 .order {
-  background-image: url('../../img/layer1.png');
+  background-image: url('./img/layer1.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -8,14 +8,14 @@
   position: relative;
 
   &:before {
-    content: url('../../img/berries7.png');
+    content: url('./img/berries7.png');
     position: absolute;
     left: 2%;
     bottom: 10%;
   }
 
   &:after {
-    content: url('../../img/leaves7.png');
+    content: url('./img/leaves7.png');
     position: absolute;
     right: 0;
     bottom: 9%;

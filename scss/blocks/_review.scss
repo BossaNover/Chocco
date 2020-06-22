@@ -2,8 +2,14 @@
   
   &__display {
     background: url('./img/review_layer2.png') right top no-repeat;
+
+    @include phones {
+      background-position: right top 4%;
+
+    }
+
     background-color: $light-grey2;
-    padding: 50px 45px 20px;
+    padding: rem(50px) rem(45px) rem(20px);
 
     position: relative;
     overflow: hidden; // спец.для того, чтобы скрыть часть элемента - белого круга, вверху. 
@@ -23,12 +29,29 @@
 
     &-inner {
       display: flex;
+
+      @include tablets {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
   &__avatar {
-    width: 254px;
-    height: 260px;
+    width: rem(254px);
+    height: rem(260px);
+    
+    @include tablets {
+      width: 131px;
+      height: 133px;
+    }
+
+    @include phones {
+      width: 122px;
+      height: 125px;
+    }
+
 
     &-img {
       object-fit: cover;  // чтобы картинка заполняла всю ширину и высоту!
@@ -38,27 +61,48 @@
   }
   &__content {
     flex: 1;  // - чтобы текст не прижимал картинку!
-    padding: 16px 120px 16px 16px;
+    padding: rem(16px) rem(120px) rem(16px) rem(16px);
+    
+    @include tablets {
+      @include flex-center;
+      flex-direction: column;
+      padding: 20px 20px 27px;
+    }
+
+
   }
   
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
     font-size: 30px;
     font-weight: bold;
     color: $black;
   }
 
   &__text {
-    margin-bottom: 33px;
+    margin-bottom: rem(33px);
+
+    @include tablets {
+      margin-bottom: rem(23px);
+    }
   }
 
   &__author {
     color: $black;
     font-weight: bold;
+    font-size: $f-size_base;
   }
 
   &__switcher {
     @include flex-center;
-    padding: 20px;
+    padding: rem(20px);
+
+    @include tablets {
+      padding: rem(30px);
+    }
+
+    @include phones {
+      padding: rem(22px);
+    }
   }
 }

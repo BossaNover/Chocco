@@ -1,15 +1,13 @@
 .interactive-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 6px solid transparent;
-  overflow: hidden; // ПОЧЕмУ?
+  width: rem(80px);
+  height: rem(80px);
+  // border: 6px solid transparent;  перенес отсюда на ссылку
   position: relative;
-
-  &--active {
+  
+  &--active .interactive-avatar__link {
     border-color: $pine;
   }
-
+  
   &__link {
     position: absolute;
     top: 0;
@@ -17,6 +15,14 @@
     right: 0;
     bottom: 0;
     display: block; //почему ?  видео №7 07:42  "т.к. мы изменяли размеры ссылки"
+    border-radius: 50%;
+    border: 6px solid transparent; 
+    overflow: hidden; // ПОЧЕмУ?
+
+
+    &:focus {
+      border-color: $pine;
+    }
   }
 
   &__img {

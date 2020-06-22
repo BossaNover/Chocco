@@ -3,10 +3,11 @@
   &__list {
     display: flex;
     align-items: center;
+    
   }
 
   &__item {
-    margin-right: 26.5px;
+    margin-right: rem(26.5px);
 
     &:last-child {
       margin-right: 0;

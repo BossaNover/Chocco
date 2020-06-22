@@ -1,0 +1,21 @@
+.social__list {
+  display: flex;
+  align-items: center;
+}
+
+.social__item {
+  margin-right: 20px;
+}
+
+.social__link {
+  @include flex-center;
+  color: $black;
+  width: 23px;
+  height: 29px;
+  opacity: 0.3;
+  transition: 0.3s;
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}

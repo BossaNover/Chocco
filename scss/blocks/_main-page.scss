@@ -1,6 +1,6 @@
 .main-page {
   
-  min-height: 650px; // почему именно MIN-height?
+  min-height: rem(650px); // почему именно MIN-height?
   height: 100vh; //  для отображения секции в высоту окна
 
   position: relative;
@@ -9,57 +9,129 @@
   background-color: $light-grey-blue;
   color: $white;
   
+  @include tablets {
+    background-position: right top 5%;
+  }
+
+
   &__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between; не используем, т.к. раздел title-section расположен не по центру
     height: 100%;
-    padding: 24px 0 47px;
+    padding: rem(24px) 0 rem(45px);
 
-    background: url('./img/snack.png') right center / 50% auto no-repeat; // версия Сабанцева. 
+    // background: url('./img/snack.png') right center / 50% auto no-repeat; // версия Сабанцева. 
     // Так мы достигаем эффекта, когда батончики не наползают на текст.
+
+    @include tablets {
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
 
   }
   
   &:after {
     content: "";
-    background: url('./img/pics-main.png') no-repeat;
-    width: 460px;
-    height: 341px;
+    background: url('./img/main-pics.png') no-repeat;
+    width: rem(460px);
+    height: rem(341px);
     
     position: absolute;
-    bottom: -16vh;
-    right: 4.5%;
+    right: 1.5%;
+    bottom: 0;
+    transform: translateY(14%);
+
+    @include tablets {
+      display: none;
+    }
   }
 
   &:before {
     content: "";
     background: url('./img/leaves3.png') no-repeat;
-    width: 59px;
-    height: 113px;
-    
+    width: rem(59px);
+    height: rem(113px);
     position: absolute;
-    bottom: -16vh;
     left: 3%;
+    bottom: 0;
+    transform: translateY(50%);
+    
+    @include tablets {
+      display: none;
+    }
+
   }
 
   &__title-section {
     width: 46%;
+    flex: 1; // забираем все свободное пространство
+    justify-content: center; //ставим внутри него по центру
+    padding-top: rem(34px); // немного опускаем эту секцию за счет паддинга
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  
+    @include tablets {
+      width: 100%;
+      align-items: center;
+      padding: 20px 7% 0; 
+    }
+  }
+
+  &__tablets-picture {
+    display: none;
+
+    @include tablets {
+      display: block;
+      max-width: 100%; // картинка не реагирует на max-width!! 
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__title {
+    padding-right: 16%;
+    margin-bottom: rem(8px);
+    
+    @include tablets {
+      text-align: center;
+      padding-right: 0; 
+    }
   }
 
   &__title-description {
-    padding-right: 10%;
-    font-size: 21px;
-    margin-bottom: 30px;
-    
+    padding-right: 16%;
+    font-size: rem(21px);
+    margin-bottom: rem(25px);
+  
+    @include tablets {
+      text-align: center;
+      padding: 0 30%; 
+    }
+  
   }
 
   &__icons-section {
     @include flex-start;
-    width: 46%;
+    width: 50%;
+
+    @include tablets {
+      display: none;
+    }
+  }
+
+  &__picture {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    max-width: 100%;
+
+    @include tablets {
+      display: none;
+    }
   }
 
 }

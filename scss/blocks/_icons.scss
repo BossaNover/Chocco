@@ -1,0 +1,32 @@
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.happyman, .smile, .biceps {
+  width: 69px;
+  height: 69px;
+  fill: $charcoal;
+  // stroke-width: 1px; это свойство почему-то делает линию очень жирной, примерно 6-8px толщины.
+}
+
+.vk {
+  width: 23px;
+  height: 13px;
+  fill: currentColor;
+  // opacity: 0.3;
+}
+
+.fb, .inst {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.twit {
+  width: 20px;
+  height: 16px;
+  fill: currentColor;
+}
+

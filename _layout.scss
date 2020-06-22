@@ -1,10 +1,27 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font-weight: normal; 
-  box-sizing: border-box;
-  font-family: 'Alegreya Sans', serif;
+  // font-weight: normal; не по БЭМу задавать стили на *, в т.ч. те, которые по умолчанию заданы 
+  box-sizing: inherit; // лучше задать так, чтобы наследовалось 
+  
+}
+
+html {
+ box-sizing: border-box;
+ font-size: 18px;
+
+ @include tablets {font-size: 16px};
+ @include phones {font-size: 14px};
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialised; 
+  -moz-osx-font-smoothing: grayscale; 
+  position: relative; // а зачем?
 }
 
 a {
@@ -13,23 +30,27 @@ a {
   text-decoration: none;
 }
 
-ul li {
-  list-style: none;
+img {
+  max-width: 100%; // делаем для масштабирования картинок - чтобы они сжимались при сжатиии окна
 }
 
-body {
-  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
-  font-size: $f-size_base;
-  font-style: normal;
-  line-height: 1.42;
-  -webkit-font-smoothing: antialised; 
-  -moz-osx-font-smoothing: grayscale; 
-  position: relative; // а зачем?
+p, span {
+  margin: 0;
+}
+
+ul, ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5 {
   padding: 0;
   margin: 0;
+}
+
+address {
+  font-style: normal;
 }
 
 .wrapper {
@@ -41,11 +62,18 @@ h1, h2, h3, h4, h5 {
 }
 
 .section {
-  min-height: 650px; // почему именно MIN-height?
+  min-height: rem(650px); // почему именно MIN-height?
   height: 100vh; //  для отображения секции в высоту окна
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include tablets {
+    min-height: rem(1024px);
+  } 
+  @include tablets {
+    min-height: rem(568px);
+  } 
 
 }
 
@@ -54,21 +82,28 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
   position: relative;  // спец.прием, который помогает задать бОльший приоритет содержимому контейнера, 
   // чтобы картинки случайно не на ползли на текст!
+
+  @include tablets {
+    width: $container-tablets-width;
+  }
+
+  @include phones {
+    width: $container-phones-width;
+  }
 }
 
 .title {
   font-size: $f-size_title;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .description p {
-  font-size: 21px;
+  font-size: rem(21px);
 }
 
-.logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+
+.tablets-pic {
+  max-width: 100%; // картинка не реагирует на max-width! 
 }

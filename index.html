@@ -12,13 +12,13 @@
   <div class="wrapper">
     <div class="maincontent">
       <!-- зачем?? -->
-      <section class="main-page">
+      <section class="main-page" id="main-page">
         <div class="container main-page__container">
 
           <header class="header">
-            <a href="#" class="logo">
-              <img src="./img/icons/logo.png" alt="chocco logo" class="logo__pic">
-            </a>
+            <div class="logo">
+              <img src="./img/icons/logo.png" alt="лого" class="logo__icon">
+            </div>
             <div class="header__wrapper">
               <nav class="nav">
                 <ul class="nav__list">
@@ -35,30 +35,37 @@
                     <a href="#" class="nav__link">Меню</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Отзывы</a>
+                    <a href="#reviews" class="nav__link">Отзывы</a>
                   </li>
                   <li class="nav__item">
                     <a href="#" class="nav__link">Как мы работаем</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Контакты</a>
+                    <a href="#contacts" class="nav__link">Контакты</a>
                   </li>
                 </ul>
               </nav>
             </div>
-            <a href="tel:+78009039090" class="phone">
-              <span class="phone__picture">
-                <img src="./img/icons/phone.png" alt="" class="phone__icon">
-              </span>
-              <span class="phone__number">8 800 903 90 90</span>
+            <a href="tel:+78009039090" class="phone header__phone">
+              <svg class="phone__icon">
+                <use href="./img/icons/sprite.svg#phone"></use>
+              </svg>
+              <span class="phone__number phone__number--24px">8 800 903 90 90</span>
             </a>
+            <div class="header__hamburger-button hamburger">
+            </div>
 
           </header>
-
+          
+          
           <div class="main-page__title-section">
-            <h1 class="title main-page__title">Натуральные <br>шоколадные <br>батончики</h1>
+            
+            <div class="main-page__tablets-picture">
+              <img src="./img/main-pics2.png" alt="" class="tablets-pic">
+            </div>
+            <h1 class="title main-page__title">Натуральные шоколадные батончики</h1>
             <article class="main-page__title-description">
-              <p>Наши батончики идеально подходят для <br>
+              <p>Наши батончики идеально подходят для
                 тех, кто следит за своим здоровьем</p>
             </article>
             <a href="" class="button button--white">Заказать</a>
@@ -70,33 +77,35 @@
                 <div class="feature__icon">
                   <img src="./img/icons/leaf.png" alt="leaf" class="leaf__icon">
                 </div>
-                <div class="feature__text">100% <br>
-                  натуральный<br>
+                <div class="feature__text">100%
+                  натуральный
                   продукт</div>
               </li>
               <li class="features__item feature">
                 <div class="feature__icon">
                   <img src="./img/icons/truck.png" alt="truck" class="truck__icon">
                 </div>
-                <div class="feature__text">3-5 дней<br>
-                  доставка<br>
+                <div class="feature__text">3-5 дней
+                  доставка
                   по РФ</div>
               </li>
               <li class="features__item feature">
                 <div class="feature__icon">
                   <img src="./img/icons/tape-measure.png" alt="tape" class="tape__icon">
                 </div>
-                <div class="feature__text">Не портит<br>
+                <div class="feature__text">Не портит
                   фигуру</div>
               </li>
             </ul>
           </div>
-
+          
         </div>
+
+        <img src="./img/snack.png" alt="" class="main-page__picture">
 
       </section>
 
-      <section class="section why">
+      <section class="section why" id="why">
         <div class="container why__container">
           
           <div class="why__title-section">
@@ -113,7 +122,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__image">
                   <div class="benefit__wrapper">
-                    <img src="./img/icons/happyman.svg" alt="happy human" class="benefit__icon"></img>
+                    <svg class="happyman">
+                      <use href="./img/icons/sprite.svg#happyman"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -128,7 +139,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__image">
                   <div class="benefit__wrapper">
-                    <img src="./img/icons/smile.svg" alt="smile" class="benefit__icon"></img>
+                    <svg class="smile">
+                      <use href="./img/icons/sprite.svg#smile"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -143,7 +156,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__image">
                   <div class="benefit__wrapper">
-                    <img src="./img/icons/biceps.svg" alt="biceps" class="benefit__icon"></img>
+                    <svg class="biceps">
+                      <use href="./img/icons/sprite.svg#biceps"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -162,7 +177,7 @@
         </div>
       </section>
 
-      <section class="section reviews">
+      <section class="section reviews" id="reviews">
         <div class="container reviews__container">
           <h2 class="title reviews__title">Отзывы</h2>
           <div class="review">
@@ -206,12 +221,13 @@
         </div>
       </section>
 
-      <section class="section order">
+      <section class="section order" id="order">
         <div class="container order__container">
 
           <h2 class="title order__title">Закажите доставку</h2>
 
           <form action="" class="form">
+            
             <div class="form__col">
               
               <div class="form__row">
@@ -292,34 +308,83 @@
         </div>
       </section>
     
-      <nav class="fixed-menu">
-        <ul class="fixed-menu__list">
-          <li class="fixed-menu__item fixed-menu__item--active">
-            <a href="#" class="fixed-menu__link"></a>
+      <section class="section contacts" id="contacts">
+        <div class="contacts__map"></div>
+        <footer class="footer">
+          <div class="container footer__container">
+            <address class="footer__contacts">
+              <span class="footer__address">Москва, ул.Новый Арбат, д.31/12</span>
+              <a href="tel:+78009039090" class="phone footer__phone phone--green">
+                <svg class="phone__icon phone__icon--green">
+                  <use href="./img/icons/sprite.svg#phone"></use>
+                </svg>
+                <span class="phone__number phone__number--21px">8 800 903 90 90</span>
+              </a>
+            </address>
+            <div class="social">
+              <ul class="social__list">
+                <li class="social__item">
+                  <a href="" class="social__link">
+                    <svg class="vk">
+                      <use href="./img/icons/sprite.svg#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="" class="social__link">
+                    <svg class="fb">
+                      <use href="./img/icons/sprite.svg#fb"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="" class="social__link">
+                    <svg class="inst">
+                      <use href="./img/icons/sprite.svg#inst"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="" class="social__link">
+                    <svg class="twit">
+                      <use href="./img/icons/sprite.svg#twit"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+      <nav class="page-dots">
+        <ul class="page-dots__list">
+          <li class="page-dots__item page-dots__item--active">
+            <a href="#main-page" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#why" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#reviews" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#order" class="page-dots__link"></a>
           </li>
-          <li class="fixed-menu__item">
-            <a href="#" class="fixed-menu__link"></a>
+          <li class="page-dots__item">
+            <a href="#contacts" class="page-dots__link"></a>
           </li>
         </ul>
       </nav>

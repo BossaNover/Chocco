@@ -1,0 +1,15 @@
+.contacts {
+  min-height: rem(650px);
+  height: 100vh;
+  display: flex;
+
+  &__map {
+    flex: 1;
+    background-image: url('./img/map.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+}

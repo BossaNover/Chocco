@@ -1,1 +1,1 @@
-Учебная проект Chocco от Loftschool
+Учебный проект Chocco от Loftschool

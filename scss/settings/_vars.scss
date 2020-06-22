@@ -1,6 +1,9 @@
 //devises
 $tablets: 768px;
+$phones: 480px;
 $container-width: 940px;
+$container-tablets-width: $tablets * .95;
+$container-phones-width: $phones * .95;
 
 // fonts
 
@@ -23,10 +26,10 @@ $light-grey2: #f8faf9;
 $yellow: #dee2bd;
 
 //buttons
-$button-width: 156px;
-$button-height: 58px;
+$button-width: rem(156px);
+$button-height: rem(58px);
 
 //z-indexes
-$z-fixed-menu: 100;
+$z-page-dots: 100;
 
 

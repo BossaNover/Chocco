@@ -1,0 +1,28 @@
+.footer  {
+  font-size: rem(21px);
+  color: $black;
+
+  &__container {
+
+    @include flex-between;
+    padding: 26px 2px 20px;
+
+    @include tablets {
+      padding: 26px 0 33px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  &__phone {
+    display: flex;
+    justify-content: flex-start;
+
+    
+  }
+} 

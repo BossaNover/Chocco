@@ -1,8 +1,9 @@
 .radio {
   display: flex;
+  position: relative;
   cursor: pointer; // чтобы появился указательный палец при наведении курсора
   user-select: none; // чтобы отключить выделение наименования поля при клике по нему
-  margin-right: 23px;
+  margin-right: rem(23px);
 
   &--checkbox {
     .radio__visible {
@@ -19,8 +20,15 @@
   }
 
     &__elem {
-      display: none;
-      &:checked ~ .radio__visible {
+      // display: none;  такой вариант лучше не использовать - нельзя перемещаться табом, проблемы с сервером
+      position: absolute;
+      clip: rect(0 0 0 0); // другой способ спрятать элемент
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+
+
+      &:checked, &:focus ~ .radio__visible {
         &::before {
           display: block;
         }
@@ -28,11 +36,11 @@
     }
 
     &__visible {
-      width: 26px;
-      height: 26px;
+      width: rem(26px);
+      height: rem(26px);
       border-radius: 50%;
       position: relative;
-      margin-right: 10px;
+      margin-right: rem(10px);
       background-color: $white;
 
 
@@ -43,8 +51,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 14px;
-        height: 14px;
+        width: rem(14px);
+        height: rem(14px);
         border-radius: 50%;
         background-color: $pine;
         

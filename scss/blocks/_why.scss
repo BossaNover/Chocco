@@ -3,44 +3,71 @@
   background-color: $white;
   
   background: url('../../img/big-leaf2.png') left top 57% no-repeat;
-
-  
   color: $brownish-grey;
-  
+
+  @include tablets {
+    background-position: left top 10%;
+  }
+
+  @include phones {
+    background-image: none;
+  }
+
+    
   &__container {
-    @include flex-between;
+    @include flex-center;
     flex-direction: column;
     height: 100%;
-    padding: 113px 0 118px;
+    padding: rem(113px) 0 rem(118px);
+    
+    @include tablets {
+      padding: 0;
+    }
   }
 
    &:before {
     content: url('../../img/raspberry.png');
     position: absolute;
     left: 0;
-    bottom: -80px;
+    bottom: rem(-80px);
+
+    @include phones {
+      content: "";
+    }
   }  
 
   &__title-section {
     @include flex-center;
     flex-direction: column;
-    margin-bottom: 56px;
+    margin-bottom: rem(56px);
+
+    @include phones {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
     color: $black;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: rem(10px);
 
     &-description {
       padding: 0 24%;
+
+      @include tablets {
+        padding: 0 20%;
+      }
+      
+      @include phones {
+        padding: 0 2%;
+      }
+
+
       & p {
         text-align: center;
+        font-size: $f-size_base;
       }
     }
   }
-
-
-
 
 }

@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-@mixin flex-start {
+@mixin flex-start { // вроде бы в этом миксине нет смысла, т.к. по умолчанию justify-content и align-items: flex-start;;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -27,11 +27,11 @@
 @mixin button {
   width: $button-width;
   height: $button-height;
-  padding: 18px 35px;
+  padding: rem(18px) rem(35px);
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 19px;
+  font-size: rem(19px);
   font-weight: bold;
   border-radius: $button-height/2; 
   border: none;

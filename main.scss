@@ -1,10 +1,12 @@
 @import './scss/settings/normalize';
 @import './scss/settings/fonts';
+@import './scss/settings/media';
 @import './scss/settings/mixins';
 @import './scss/settings/vars';
 
 @import './layout.scss';
 
+@import './scss/blocks/icons';
 @import './scss/blocks/header';
 @import './scss/blocks/nav';
 @import './scss/blocks/main-page';
@@ -21,4 +23,8 @@
 @import './scss/blocks/order';
 @import './scss/blocks/form';
 @import './scss/blocks/radio';
-@import './scss/blocks/fixed-menu';
+@import './scss/blocks/contacts';
+@import './scss/blocks/footer';
+@import './scss/blocks/social';
+
+@import './scss/blocks/page-dots';

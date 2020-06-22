@@ -1,8 +1,9 @@
-.fixed-menu {
+.page-dots {
   position: fixed;
-  top: 20%;
+  top: 50%;
+  transform: translateY(-50%);
   right: 3%;
-  z-index: $z-fixed-menu;
+  z-index: $z-page-dots;
 
   &__list {
     @include flex-between;
@@ -13,7 +14,7 @@
     margin-bottom: 5px;
 
     &--active {
-      .fixed-menu__link {
+      .page-dots__link {
         border-color: $white;
       }
     }

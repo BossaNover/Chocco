@@ -1,9 +1,73 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center;
+  flex-wrap: wrap;
+  
+  @include tablets {
+    justify-content: space-between;
+    width: 720px;
+    // top: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
+  };
+
+  @include phones {
+    justify-content: space-between;
+    width: 720px;
+    // top: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
+  };
+
+    
+  &__wrapper {
+    padding: 0 rem(43px);  /* почему-то если задаю паддинги, происходит перенос слов на новую строку, как будто не хватает ширины */
+  
+    @include tablets {
+      display: none
+    };
+  }
+
+  &__hamburger-button {
+    position: relative;
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $white;
+    display: none;
+
+    @include tablets {
+      display: block;
+    };
+       
+    &:before {
+      content: "";
+      position: absolute; 
+      top: 9px;     
+      width: 24px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $white;
+    }
+
+    &:after {
+      content: "";
+      position: absolute; 
+      bottom: 9px;     
+      width: 24px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $white;
+    }
+  }
+  
 }
 
-.header__wrapper {
-  padding: 0 43px;  /* почему-то если задаю паддинги, происходит перенос слов на новую строку, как будто не хватает ширины */
+.header .phone {  // здесь надо переделать - добавить класс phones для хедера (белый), и на него задать none
+  @include tablets {
+    display: none
+  };
+  
+  @include phones {
+    display: none
+  };
 }

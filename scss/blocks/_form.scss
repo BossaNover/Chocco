@@ -1,18 +1,34 @@
 .form {
   display: flex;
 
+  @include tablets {
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
   &__col {
     flex: 1;
-    margin-right: 20px;
+    margin-right: rem(20px);
 
     &:last-child {
+      margin-right: 0;
+    }
+
+    @include tablets {
+      flex: 1;
+      width: 100%;
       margin-right: 0;
     }
   }
 
   &__row {
     display: flex;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+
+    @include tablets {
+      margin-bottom: 17px;
+    }
     
   }
 
@@ -25,13 +41,24 @@
     }
   }
 
+  &__title {
+    font-size: $f-size-base;
+  }
+
+
   &__input {
     width: 100%; // это позволяет растянуть инпуты на ширину form__block.
-    // у меня почему-то наобогрот блочки сжимаются. Непонятен механизм этого.
+    // у меня почему-то наоборот блочки сжимаются. Непонятен механизм этого.
     border: 0;
     padding: 18px 11px;
     border: 3px solid transparent;
     height: 59px;
+
+    @include tablets {
+      height: 35px;
+      padding: 10px;
+      font-size: 14px;
+    }
 
     &:focus {
       border-color: $yellow;
@@ -41,6 +68,11 @@
     &--textarea {
       height: 180px;
       resize: none;  // запрет на растягивание textarea курсором
+      
+      @include tablets {
+        height: 80px;
+      }
+
     }
   }
   
@@ -48,11 +80,24 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 8px;
+
+    @include tablets {
+      margin-bottom: 12px;
+    }
+    @include phones {
+      margin-bottom: 18px;
+    }
   }
 
   &__button {
     display: flex;
     margin-top: 40px;
+    
+    @include tablets {
+      justify-content: center;
+      margin-top: 35px;
+    }
+
   }
 }
 

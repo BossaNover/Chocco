@@ -1,31 +1,47 @@
 .reviews {
   color: $brownish-grey;
   position: relative;
-
+  
   &__container {
     height: 100%;
-    padding: 60px 0 66px;
+    padding: rem(60px) 0 rem(66px);
+    @include flex-center;
+    flex-direction: column;
+    
+    @include tablets {
+      padding: 0;
+    }
+
   }
 
   &__title {
-    text-align: center;
     color: $black;
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
+
+    @include tablets {
+      margin-bottom: rem(45px);
+    }
   }
 
    
   &:before {
     content: url('../../img/review_layers.png'); 
     left: 0;
-    bottom: -160px;
+    bottom: 0;
+    transform: translate(0, 50%);
     position: absolute;
   }
 
   &:after {
     content: url('../../img/berries5.png'); 
-    right: 15px;
-    top: 35px;
+    right: 0;
+    top: 0;
+    transform: translate(-12%, 42%);
     position: absolute;
+
+    @include tablets {
+      transform: translate(20%, 20%);
+    }
   }
 
 }

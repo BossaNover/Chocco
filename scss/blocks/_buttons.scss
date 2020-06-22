@@ -24,10 +24,11 @@
   &--transparent {
     background-color: transparent;
     color: $pine;
-    font-size: 18px;
+    font-size: $f-size_base;
     text-transform: none;
     font-weight: normal;
     box-shadow: none;
+    outline: none;
   
     &:hover {
       color: $black;

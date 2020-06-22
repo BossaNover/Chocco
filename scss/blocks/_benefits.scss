@@ -1,5 +1,10 @@
 .benefits {
-  @include flex-between;
+  @include flex-center;
+
+  @include phones {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   &__item {
     flex: 1;
@@ -8,12 +13,28 @@
     // Поэтому мы заменили марджин на паддинг, теперь, right: 0 ставит прямо на границу (середину). 
     position: relative;
 
+    @include tablets {
+      padding: 0 3.5%;
+    }
+    
+    @include phones {
+      padding: 0;
+      margin-bottom: 40px;
+      display: flex;
+    }
+
+
+
     &:before {
       content: url('./img/icons/bubbles.png');
       position: absolute;
-      top: 52px;
+      top: rem(52px);
       right: 0;
       transform: translateX(50%);
+
+      @include tablets {
+        content: '';
+      }
     }
 
     &:first-child {
@@ -35,8 +56,21 @@
   @include flex-between;
   flex-direction: column;
 
+  @include phones {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
   &__image {
-    margin-bottom: 35px;
+    margin-bottom: rem(35px);
+
+    @include tablets {
+      margin-bottom: rem(25px);
+    }
+    @include phones {
+      margin-bottom: 0;
+      margin-right: 14px;
+    }
   }
 
   &__wrapper {
@@ -48,24 +82,44 @@
     overflow: hidden;
   }
 
-  &__icon {
-    width: 75px;
-    height: 69px;
-  }
+  // &__icon {
+  //   width: rem(75px);
+  //   height: rem(69px);
+  // }
 
   &__title {
+    font-size: 27px;
     color: $black;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin-bottom: rem(25px);
+    
+    @include tablets {
+      margin-bottom: rem(15px);
+    }
+
   }  
 
   &__text {
     @include flex-center;
     flex-direction: column;
+
+    @include phones {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-right: 1%;
+    }
   }
 
   &__desc p {
-    text-align: center;
+    // text-align: center; // сделано флексом
+    font-size: $f-size_base;
+  }
+
+  &__desc {
+    @include phones {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
 
 }
